@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Product from './Product';
 import SideMenu from './SideMenu';
 import Cart from './Cart';
+import Basket from './Basket';
 
-function FetchData() {
+function FetchData({addProduct}) {
 
     const [data,setData]= useState([]);
 
@@ -24,21 +25,26 @@ function FetchData() {
         getData();
     },[])
 
+    // console.log(data);
 
   
   return (
    
      <>
-    {console.log("data",data)}
-    <div className='checkTheContainer'>
+    {/* {console.log("data",data)} */}
+    <div className='checkTheContainer flex flex-wrap mt-20'>
 
           {/* when you are mapping data make sure it's and array(if data is an ) */}
           {data?.map((item,key)=>{
+
+            //  console.log(item.id,"item-------")
+
               return(
                 <>
-                  <div className='productCard'>
-                  <Product props={item}/>
+                  <div className='productCard bg-transparent-500 w-21 m-2'>
+                  <Product item={item} key={item.id} onAdd={addProduct}/>
                   <Cart id={item.title} props={item}/>
+                  {/* <Basket item={item} /> */}
                   </div>
                 </>  
               )

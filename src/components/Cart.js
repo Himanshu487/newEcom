@@ -31,8 +31,8 @@ const Cart = ({props,id}) => {
 
   return (
     <div className='cartUpdate'>
-        <div className='button' onClick={removeItem}>-</div>
-        <div className='button' onClick={addToCart}>+</div>
+        {/* <div className='button bg-green-500 m-1' onClick={removeItem}>-</div>
+        <div className='button  bg-green-500 m-1' onClick={addToCart}>+</div> */}
     </div>
   )
 }

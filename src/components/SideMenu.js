@@ -3,13 +3,13 @@ import React from 'react'
 const SideMenu = ({dataAdd,dataDel}) => {
 
 
-  console.log(dataAdd,dataDel,"dataDel","dataAdd");
+  // console.log(dataAdd,dataDel,"dataDel","dataAdd");
   
   return (
 
     <p>
-{console.log(dataAdd)}
-{console.log(dataDel)}
+{/* {console.log(dataAdd)}
+{console.log(dataDel)} */}
     </p>
   )
 }
