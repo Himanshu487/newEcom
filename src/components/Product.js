@@ -25,7 +25,7 @@ const Product = (props) => {
     <div className='productSty w-32 flex justify-center items-center flex-col'>
     <img className='itemSty w-full h-28' src={item.image} alt="Girl in a jacket" width="500" height="600"></img>
     <p className='w-32 h-32'>{truncatedText}</p>
-    <button className='bg-yellow-500 text-violet-500 px-4' onClick={()=>onAdd(item)}>Add to Cart</button>
+    <button className='bg-yellow-500 text-white px-4 rounded-md' onClick={()=>onAdd(item)}>Add to Cart</button>
     </div>
     }
     </>

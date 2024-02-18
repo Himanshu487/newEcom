@@ -21,9 +21,27 @@ function Home() {
       }
     }
 
-    const OnRemove=()=>{
-        console.log("remove button");
-    }
+    const OnRemove=(item)=>{
+
+        console.log("OnRemove item",item);
+    
+        let exist = cartItems.find((x) =>  x.id === item.id );
+
+        console.log("exist", exist.qty);
+
+      if(exist.qty == 1){
+        setCartItems(cartItems.filter((x)=> x.id !== item.id ))
+      }else{
+
+        setCartItems(
+          cartItems.map((x) =>
+            x.id === item.id ? { ...exist, qty: exist.qty - 1 } : x
+          )
+        );
+
+      }
+
+      }
 
     const BasketClick=(item)=>{
 
@@ -37,9 +55,9 @@ function Home() {
         {/* <Navbar basketbtn={BasketClick} cartVisibility={showAddtoCart}/> */}
         <Navbar basketButton={BasketClick} cartData={cartItems} />
          
-         <div className='Maincontainer flex'>
+         <div className='Maincontainer flex justify-between'>
         <FetchData addProduct={OnAdd}/>
-        <SideCartBasket cartData={cartItems}/>
+        <SideCartBasket cartData={cartItems} removeItem={OnRemove} addItem={OnAdd}/>
         </div>
     </div>
   )
