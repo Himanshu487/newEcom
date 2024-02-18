@@ -10,7 +10,8 @@ function FetchData({addProduct}) {
     const [isOpen, setIsOpen] = useState(false);
 
     // const [category, setCategory] = useState("");
-    const [category, setCategory] = useState([]);
+    // const [category, setCategory] = useState([]);
+    const [category, setCategory] = useState(false);
 
     let categoryData;
 
@@ -33,35 +34,45 @@ function FetchData({addProduct}) {
     
     useEffect(()=>{
         getData();
-    },[categoryData])
-
-    const handleDropDown=(event)=>{
-
-      const selectedCategory = event.target.textContent;
-      setCategory(selectedCategory);
-
-       categoryData = data.filter((item) => item.category === selectedCategory);
-       setData(categoryData);
-    }
+    },[])
     
-    console.log("data 52 ",data);
+
+    console.log("data",data);
+
+    const handleDropDown = (selectedCategory) => {
+      setCategory(selectedCategory);
+  };
+
+  console.log("category 3443",category);
+
+  const filteredData = category ? data.filter((item) => item.category === category) : data;
+  // const filteredData = category ? alert('true ? ') : alert('false : ');
+
+    // const handleDropDown=(event)=>{
+    //   const selectedCategory = event.target.textContent;
+    //   setCategory(selectedCategory);
+    //    categoryData = data.filter((item) => item.category === selectedCategory);
+    //    setData(categoryData);
+    // }
+
+    console.log("filteredData",filteredData);
   
   return (
    
      <>
-    {/* {console.log("data",data)} */}
 
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-end mr-2'>
     <div className="dropdown mt-16">
-          <button className="dropbtn" onClick={toggleDropdown}>
+          <button className="dropbtn rounded-lg" onClick={toggleDropdown}>
             categories
           </button>
           {isOpen && (
             <div className="dropdown-content">
-              <a href="#" onClick={handleDropDown}>men's clothing</a>
-              <a href="#" onClick={handleDropDown}>jewelery</a>
-              <a href="#" onClick={handleDropDown}>electronics</a>
-              <a href="#" onClick={handleDropDown}>women's clothing</a>
+              {/* <a href="#" onClick={handleDropDown}>men's clothing</a> */}
+              <a href="#" onClick={()=> handleDropDown("men's clothing")}>men's clothing</a>
+              <a href="#" onClick={()=> handleDropDown("jewelery")}>jewelery</a>
+              <a href="#" onClick={()=> handleDropDown("electronics")}>electronics</a>
+              <a href="#" onClick={()=> handleDropDown("women's clothing")}>women's clothing</a>
             </div>
           )}
         </div>
@@ -71,9 +82,7 @@ function FetchData({addProduct}) {
         
 
           {/* when you are mapping data make sure it's and array(if data is an ) */}
-          {data?.map((item,key)=>{
-
-            //  console.log(item.id,"item-------")
+          {filteredData?.map((item,key)=>{
 
               return(
                 <>
@@ -89,9 +98,9 @@ function FetchData({addProduct}) {
     </div> 
     </div>
 
-    <div className='sideMenu'>
+    {/* <div className='sideMenu'>
          <SideMenu/>
-    </div>
+    </div> */}
 
      </> 
   )
