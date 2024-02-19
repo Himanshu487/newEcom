@@ -13,8 +13,6 @@ function Navbar(props) {
         setBasketVis(!showBasket);
     }
 
-    console.log("showBasket",showBasket);
-
   return (
     <div>
         <div className='fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>

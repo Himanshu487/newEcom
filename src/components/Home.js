@@ -9,26 +9,34 @@ function Home() {
 
     const [cartItems,setCartItems] = useState([]);
 
+    const [amount, setAmount] = useState({qty:1});
+
     // const [showAddtoCart, setshowAddtoCart] = useState(false);
 
     const OnAdd=(item)=>{
-      console.log("cartItems",cartItems);
+      
+
       let exist = cartItems.find((x) =>  x.id === item.id );
       if(exist){
         setCartItems(cartItems.map((x)=> x.id === item.id ? {...exist, qty: exist.qty + 1}: x))
+        // here we have really important think, which we have implemented, which while using the usestate hook,
+        // by the help of that we are also returning, the newly added data with it ,
+        // for the further usage in our component, which is returned as a object  from the above, for particular products. 
       }else{
+       
         setCartItems([...cartItems, { ...item, qty:1 }])
       }
     }
 
+   
+
     const OnRemove=(item)=>{
 
-        console.log("OnRemove item",item);
+      
     
         let exist = cartItems.find((x) =>  x.id === item.id );
 
-        console.log("exist", exist.qty);
-
+        
       if(exist.qty == 1){
         setCartItems(cartItems.filter((x)=> x.id !== item.id ))
       }else{
@@ -50,6 +58,8 @@ function Home() {
     
     }
 
+   
+
   return (
     <div>
         {/* <Navbar basketbtn={BasketClick} cartVisibility={showAddtoCart}/> */}
@@ -57,7 +67,7 @@ function Home() {
          
          <div className='Maincontainer flex justify-between'>
         <FetchData addProduct={OnAdd}/>
-        <SideCartBasket cartData={cartItems} removeItem={OnRemove} addItem={OnAdd}/>
+        <SideCartBasket cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} setQuantity = {amount}/>
         </div>
     </div>
   )

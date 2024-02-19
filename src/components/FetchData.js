@@ -16,7 +16,6 @@ function FetchData({addProduct}) {
     let categoryData;
 
     const toggleDropdown = (e) => {
-      console.log("e toggleDropdown",e)
       setIsOpen(!isOpen);
     };
 
@@ -35,15 +34,11 @@ function FetchData({addProduct}) {
     useEffect(()=>{
         getData();
     },[])
-    
-
-    console.log("data",data);
 
     const handleDropDown = (selectedCategory) => {
       setCategory(selectedCategory);
   };
 
-  console.log("category 3443",category);
 
   const filteredData = category ? data.filter((item) => item.category === category) : data;
   // const filteredData = category ? alert('true ? ') : alert('false : ');
@@ -55,7 +50,6 @@ function FetchData({addProduct}) {
     //    setData(categoryData);
     // }
 
-    console.log("filteredData",filteredData);
   
   return (
    
@@ -86,7 +80,7 @@ function FetchData({addProduct}) {
 
               return(
                 <>
-                  <div className='productCard bg-transparent-500 w-21 m-2'>
+                  <div className='productCard bg-transparent-500 w-21 m-6'>
                   <Product item={item} key={item.id} onAdd={addProduct}/>
                   <Cart id={item.title} props={item}/>
                   {/* <Basket item={item} /> */}
