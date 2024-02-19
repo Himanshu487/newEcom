@@ -63,11 +63,11 @@ function Home() {
   return (
     <div>
         {/* <Navbar basketbtn={BasketClick} cartVisibility={showAddtoCart}/> */}
-        <Navbar basketButton={BasketClick} cartData={cartItems} />
+        <Navbar basketButton={BasketClick} cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} />
          
          <div className='Maincontainer flex justify-between'>
         <FetchData addProduct={OnAdd}/>
-        <SideCartBasket cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} setQuantity = {amount}/>
+        <SideCartBasket className="hidden sm:block" cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} />
         </div>
     </div>
   )

@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar(props) {
   
-    const {basketButton,cartData}=props;
+    const {basketButton,cartData,removeItem,addItem}=props;
 
     const [showBasket,setBasketVis] = useState(false);
 
@@ -23,7 +23,7 @@ function Navbar(props) {
     {  
     showBasket
         ? 
-<Basket data={basketButton} cartData = {cartData} />
+<Basket data={basketButton} cartData = {cartData} onAdd={addItem} onRemove={removeItem} />
         :
     ""
     }

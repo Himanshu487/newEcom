@@ -41,3 +41,12 @@
     background-color: #3e8e41;
   }
   
+
+  @media (max-width: 639px) {
+
+    .Maincontainer .SideCart{
+        display: none;
+    }
+
+  }
+
