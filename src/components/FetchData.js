@@ -11,9 +11,9 @@ function FetchData({addProduct}) {
 
     // const [category, setCategory] = useState("");
     // const [category, setCategory] = useState([]);
-    const [category, setCategory] = useState(false);
+    const [category, setCategory] = useState("All categories");
 
-    let categoryData;
+    let filteredData;
 
     const toggleDropdown = (e) => {
       setIsOpen(!isOpen);
@@ -36,11 +36,18 @@ function FetchData({addProduct}) {
     },[])
 
     const handleDropDown = (selectedCategory) => {
-      setCategory(selectedCategory);
-  };
+       console.log("selectedCategory",selectedCategory);
+        setCategory(selectedCategory);
+
+    };
 
 
-  const filteredData = category ? data.filter((item) => item.category === category) : data;
+    if(category === "All categories"){
+      filteredData =  data;
+    }else{
+      filteredData = category ? data.filter((item) => item.category === category) : data;
+    }
+
   // const filteredData = category ? alert('true ? ') : alert('false : ');
 
     // const handleDropDown=(event)=>{
@@ -55,14 +62,16 @@ function FetchData({addProduct}) {
    
      <>
 
-    <div className='flex flex-col items-end mr-2'>
+    <div className='flex flex-col items-start mr-2'>
     <div className="dropdown mt-16">
           <button className="dropbtn rounded-lg" onClick={toggleDropdown}>
-            categories
+            {/* categories */}
+            {category}
           </button>
           {isOpen && (
             <div className="dropdown-content">
               {/* <a href="#" onClick={handleDropDown}>men's clothing</a> */}
+              <a href="#" onClick={()=> handleDropDown("All categories")}>All categories</a>
               <a href="#" onClick={()=> handleDropDown("men's clothing")}>men's clothing</a>
               <a href="#" onClick={()=> handleDropDown("jewelery")}>jewelery</a>
               <a href="#" onClick={()=> handleDropDown("electronics")}>electronics</a>
