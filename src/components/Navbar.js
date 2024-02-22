@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Basket from './Basket';
+import FuncHandler from '../hooks/FuncHandler';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Navbar(props) {
+
+  const FuncHandlerHelper = FuncHandler();
   
     const {basketButton,cartData,removeItem,addItem}=props;
 
@@ -12,6 +15,8 @@ function Navbar(props) {
     const basketbtn =() =>{
         setBasketVis(!showBasket);
     }
+
+    console.log("FuncHandlerHelper.cartItems",FuncHandlerHelper.cartItems);
 
   return (
     <div>

@@ -14,7 +14,7 @@ function Basket(props) {
     }
 
 
-    console.log("cartData",cartData);
+    console.log("cartData Basket",props);
     
     let priceArray = [];
     let sum = 0; //always initialize sum with a initial value
