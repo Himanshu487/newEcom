@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Basket from './Basket';
 import FuncHandler from '../hooks/FuncHandler';
+import { NavLink } from 'react-router-dom';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -22,6 +23,10 @@ function Navbar(props) {
     <div>
         <div className='Navbar fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>
             Himanshu Store
+            
+            <NavLink to="/SideMenu" activeClassName="active">SideMenu</NavLink>
+            <NavLink to="/Pay" activeClassName="active">Pay</NavLink>
+
            <ShoppingCartIcon className='float-right text-red-500 cursor-pointer' onClick={basketbtn}/>
         </div>
 

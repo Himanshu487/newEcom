@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 function SideCartBasket(props) {
     const {cartData,removeItem,addItem}=props;
@@ -31,9 +32,13 @@ function SideCartBasket(props) {
               <p className='text-green-500'>{item.qty}*{item.price} : {item.qty * item.price}</p>
               <button className='bg-yellow-500 p-2 m-2' onClick={()=>{removeItem(item)}}>-</button>
               <button className='bg-yellow-500 p-2 m-2' onClick={()=>{addItem(item)}}>+</button>
+
+              
           </div>
       ))}
        <p className='text-green-500'>Total cost of Items : {finalAmount}$</p>
+       
+       {cartData == 0 ? "" : <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> }
   </div>
   )
 }

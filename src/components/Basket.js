@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
+import { NavLink } from 'react-router-dom';
 
 function Basket(props) {
 
@@ -62,7 +63,9 @@ function Basket(props) {
         // "hello"
 
            }
-           
+
+{cartData.length == 0 ? "" : <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> }
+           {/* <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> */}
            <p>Total sum:</p>
         </div>
         </div>
