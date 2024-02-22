@@ -15,9 +15,9 @@ function Navbar(props) {
 
   return (
     <div>
-        <div className='fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>
+        <div className='Navbar fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>
             Himanshu Store
-           <ShoppingCartIcon className='float-right text-red-500' onClick={basketbtn}/>
+           <ShoppingCartIcon className='float-right text-red-500 cursor-pointer' onClick={basketbtn}/>
         </div>
 
     {  

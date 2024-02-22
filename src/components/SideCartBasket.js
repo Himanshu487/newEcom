@@ -14,7 +14,11 @@ function SideCartBasket(props) {
     });
  
      let finalAmount = totalSum ;
-   
+
+      
+     console.log("cartData 19",cartData)
+
+     
   return (
     // <div className='SideCart mt-12 bg-slate-500'>
     <div className='SideCart mt-12 bg-slate-500'>

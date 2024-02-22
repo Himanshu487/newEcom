@@ -38,8 +38,10 @@ function Basket(props) {
         ? 
         <div className='cartBasket relative'>
         
-        <p className='absolute bg-yellow-500 w-full h-80'>
-        <CloseIcon className="relative float-right" onClick={()=>{handleClose()}} />
+        <div className='absolute bg-yellow-500 w-full h-80 modal'>
+
+         <div className='Innermodal bg-yellow-500 w-full'>
+        <CloseIcon className="relative float-right cursor-pointer" onClick={()=>{handleClose()}} />
            
            {cartData.length === 0 ? " Basket is empty currently": 
            
@@ -62,7 +64,8 @@ function Basket(props) {
            }
            
            <p>Total sum:</p>
-        </p>
+        </div>
+        </div>
     </div>
         :
         ""

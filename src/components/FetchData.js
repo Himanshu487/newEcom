@@ -62,9 +62,10 @@ function FetchData({addProduct}) {
    
      <>
 
-    <div className='flex flex-col items-start mr-2'>
+    <div className='flex flex-col items-start mr-2 bgColor'>
     <div className="dropdown mt-16">
-          <button className="dropbtn rounded-lg" onClick={toggleDropdown}>
+          {/* <button className="dropbtn rounded-lg w-full" onClick={toggleDropdown}> */}
+          <button className="dropbtn rounded-lg w-full" onClick={toggleDropdown}>
             {/* categories */}
             {category}
           </button>
@@ -80,7 +81,7 @@ function FetchData({addProduct}) {
           )}
         </div>
         
-    <div className='checkTheContainer flex flex-wrap mt-2'>
+    <div className='checkTheContainer flex flex-wrap mt-2 shadow-lg'>
 
         
 

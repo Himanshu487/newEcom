@@ -10,6 +10,7 @@ const SideMenu = ({dataAdd,dataDel}) => {
     <p>
 {/* {console.log(dataAdd)}
 {console.log(dataDel)} */}
+Check the PAGE
     </p>
   )
 }
