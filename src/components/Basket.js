@@ -39,36 +39,36 @@ function Basket(props) {
         ? 
         <div className='cartBasket relative'>
         
-        <div className='absolute bg-yellow-500 w-full h-80 modal'>
+        {/* <button className='absolute bg-yellow-500 w-full h-80 modal' onClick={()=>{handleClose()}} > */}
+        <button className='absolute bg-yellow-500 modal' onClick={()=>{handleClose()}} >
 
-         <div className='Innermodal bg-yellow-500 w-full'>
-        <CloseIcon className="relative float-right cursor-pointer" onClick={()=>{handleClose()}} />
-           
-           {cartData.length === 0 ? " Basket is empty currently": 
-           
-        
-          cartData.map((item)=>
-           
-            <div>
-                <h1>{item.title}</h1>
-                {/* <p>{item.price}</p> */}
-                <p className='text-green-500'>{item.qty}*{item.price} : {item.qty * item.price}</p>
-                <button className='bg-green-500 p-2 m-2' onClick={()=>{onRemove(item)}}>-</button>
-                <button className='bg-green-500 p-2 m-2' onClick={()=>{onAdd(item)}}>+</button>
-                
-            </div>
-           
-          )
+                          <div className='Innermodal bg-yellow-500 w-full'>
+                          <CloseIcon className="relative float-right cursor-pointer" onClick={()=>{handleClose()}} />
+                            
+                            {cartData.length === 0 ? " Basket is empty currently": 
+                            
+                          
+                            cartData.map((item)=>
+                            
+                              <div>
+                                  <h1>{item.title}</h1>
+                                  {/* <p>{item.price}</p> */}
+                                  <p className='text-green-500'>{item.qty}*{item.price} : {item.qty * item.price}</p>
+                                  <button className='bg-green-500 p-2 m-2' onClick={()=>{onRemove(item)}}>-</button>
+                                  <button className='bg-green-500 p-2 m-2' onClick={()=>{onAdd(item)}}>+</button>
+                                  
+                              </div>
+                            
+                            )
 
-        // "hello"
+                          // "hello"
 
-           }
+                            }
 
-{cartData.length == 0 ? "" : <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> }
-           {/* <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> */}
-           <p>Total sum:</p>
-        </div>
-        </div>
+                          {cartData.length == 0 ? "" : <button className='bg-green-500'><NavLink to="/Pay" activeClassName="active">Checkout</NavLink></button> }
+                            <p>Total sum:</p>
+                          </div>
+        </button>
     </div>
         :
         ""

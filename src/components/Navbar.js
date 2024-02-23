@@ -22,10 +22,8 @@ function Navbar(props) {
   return (
     <div>
         <div className='Navbar fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>
-            Himanshu Store
-            
-            <NavLink to="/SideMenu" activeClassName="active">SideMenu</NavLink>
-            <NavLink to="/Pay" activeClassName="active">Pay</NavLink>
+           
+            <NavLink to="/" activeClassName="active">Himanshu Store</NavLink>
 
            <ShoppingCartIcon className='float-right text-red-500 cursor-pointer' onClick={basketbtn}/>
         </div>

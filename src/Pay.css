@@ -31,7 +31,7 @@ button {
 	font-size: 16px;
 	width: calc(100% - 30px);
 	height: 40px;
-	margin: 40px 15px 0;
+	/* margin: 40px 15px 0; */
 	background-color: greenyellow;
 	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #ffb9f6;
 	border-radius: 4px;
@@ -42,6 +42,13 @@ button {
 	will-change: transform, background-color, box-shadow;
 	border: none;
 }
+.App1 form button{
+margin: 40px 15px 0;
+}
+
+.InputContainer button{
+	margin: 40px 15px 0;
+}
 
 button:active {
 	background-color: #d782d9;
@@ -51,7 +58,7 @@ button:active {
 
 .App1 {
 	margin-left: 25%;
-	margin-top: 5%;
+	margin-top: 18%;
 	margin-right: 25%;
 }
 
