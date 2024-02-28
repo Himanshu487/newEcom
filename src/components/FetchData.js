@@ -62,16 +62,16 @@ function FetchData({addProduct}) {
    
      <>
 
-    <div className='flex flex-col items-start mr-2 bgColor'>
+    {/* <div className='flex flex-col items-start mr-2 bgColor'>
     <div className="dropdown mt-16">
-          {/* <button className="dropbtn rounded-lg w-full" onClick={toggleDropdown}> */}
+         
           <button className="dropbtn rounded-lg w-full" onClick={toggleDropdown}>
-            {/* categories */}
+           
             {category}
           </button>
           {isOpen && (
             <div className="dropdown-content">
-              {/* <a href="#" onClick={handleDropDown}>men's clothing</a> */}
+            
               <a href="#" onClick={()=> handleDropDown("All categories")}>All categories</a>
               <a href="#" onClick={()=> handleDropDown("men's clothing")}>men's clothing</a>
               <a href="#" onClick={()=> handleDropDown("jewelery")}>jewelery</a>
@@ -81,26 +81,8 @@ function FetchData({addProduct}) {
           )}
         </div>
         
-    <div className='checkTheContainer flex flex-wrap mt-2 shadow-lg'>
-
-        
-
-          {/* when you are mapping data make sure it's and array(if data is an ) */}
-          {filteredData?.map((item,key)=>{
-
-              return(
-                <>
-                  <div className='productCard bg-transparent-500 w-21 m-6'>
-                  <Product item={item} key={item.id} onAdd={addProduct}/>
-                  <Cart id={item.title} props={item}/>
-                  {/* <Basket item={item} /> */}
-                  </div>
-                </>  
-              )
-          })}
     
-    </div> 
-    </div>
+    </div> */}
 
     {/* <div className='sideMenu'>
          <SideMenu/>

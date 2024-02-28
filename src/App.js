@@ -5,7 +5,7 @@ import SideMenu from './components/SideMenu';
 import FuncHandler from './hooks/FuncHandler';
 import { useGlobalContext } from './hooks/DataMain';
 import Navbar from './components/Navbar';
-import Pay from './Pay';
+// import Pay from './Pay';
 
 function App() {
   const { OnAdd,OnRemove,cartItems } = useGlobalContext() || {}
@@ -27,7 +27,7 @@ function App() {
      <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/SideMenu" element={<SideMenu />} />
-        <Route exact path="/Pay" element={<Pay />} />
+        {/* <Route exact path="/Pay" element={<Pay />} /> */}
       </Routes>
     </div>
 
