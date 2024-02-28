@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Basket from './Basket';
 import FuncHandler from '../hooks/FuncHandler';
 import { NavLink } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button } from '@mui/material';
 
@@ -26,8 +26,11 @@ function Navbar(props) {
            
             <NavLink to="/" activeClassName="active">Bijender properties</NavLink>
 
-           <Button className='contactbutton'>Contact Us</Button>
-           <ShoppingCartIcon className='float-right text-red-500 cursor-pointer' onClick={basketbtn}/>
+       <div className='NavbarContent'>
+           <Button className='contactbutton'> <Link to="/EnquiryForm">Contact Us</Link></Button>
+           <Button className='contactbutton'>About Us</Button>
+      </div>
+
         </div>
 
     {  

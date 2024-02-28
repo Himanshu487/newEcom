@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Product from './Product';
-import SideMenu from './SideMenu';
-import Cart from './Cart';
-import Basket from './Basket';
+
 
 function FetchData({addProduct}) {
 

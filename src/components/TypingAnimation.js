@@ -29,7 +29,8 @@ import React, { useState, useEffect } from 'react';
 
 const TypingAnimation = () => {
   const [text, setText] = useState('');
-  const fullText = 'We have over 20 years of experience in selling, <br/>buying and renting the properties';
+  // const fullText = 'We have over 20 years of experience in selling, <br/>buying and renting the properties';
+  const fullText = 'With over 20 years in real estate, we specialize in <br/> property sales, purchases, and rentals.';
 
   useEffect(() => {
     let index = 0;
