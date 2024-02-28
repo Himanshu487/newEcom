@@ -1,16 +1,26 @@
-import React from 'react'
-// import cover from "../src/public/images"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import TypingAnimation from './TypingAnimation';
 
 function BackgroundImage() {
   return (
     <div className='banner'
     style={{
         backgroundSize:"cover",
-        // backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
-        // backgroundImage: `url("../public/images/cover.jpg")`,
         backgroundPosition: "center center",
      }}
-    >BackgroundImage</div>
+    > <TypingAnimation/>
+         <div className='bannerContents'>
+            
+            <div className='bannerButtons'>
+                <button className='bannerButton'>
+                  <Link to="/EnquiryForm">Enquire Now</Link>
+                  </button>
+            </div>
+        </div>
+
+        <div className='bannerFadeBottom' />
+    </div>
   )
 }
 

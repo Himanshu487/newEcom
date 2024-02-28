@@ -6,6 +6,8 @@ import { useGlobalContext } from '../hooks/DataMain';
 import FuncHandler from '../hooks/FuncHandler';
 import BackgroundImage from './BackgroundImage';
 
+import OurServices from './OurServices';
+import CustomerR from './CustomerR';
 // const DataContext = createContext();
 
 function Home() {
@@ -22,6 +24,8 @@ function Home() {
         {/* <FetchData addProduct={OnAdd}/> */}
         {/* <SideCartBasket className="hidden sm:block" cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} /> */}
         </div>
+        <OurServices/>
+        <CustomerR/>
     </div>
 
 </>

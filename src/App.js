@@ -5,6 +5,14 @@ import SideMenu from './components/SideMenu';
 import FuncHandler from './hooks/FuncHandler';
 import { useGlobalContext } from './hooks/DataMain';
 import Navbar from './components/Navbar';
+import OurServices from './components/OurServices';
+import Footer from './components/Footer';
+import FloatingActionBtn from './components/FloatingActionBtn';
+import CustomerR from './components/CustomerR';
+import EnquiryForm from './components/EnquiryForm';
+import { useState } from 'react';
+
+// import { Fab,AddIcon,EditIcon,NavigationIcon,FavoriteIcon } from '@mui/material';
 // import Pay from './Pay';
 
 function App() {
@@ -15,6 +23,7 @@ function App() {
 
   // distributor();
 
+
   
   console.log("cartItems App", cartItems);
 
@@ -24,11 +33,19 @@ function App() {
     <div className="containerMain">
      <Navbar cartData={cartItems} removeItem={OnRemove} addItem={OnAdd} />
 
-     <Routes>
+      <Routes>
         <Route exact path="/" element={<Home/>} />
-        <Route exact path="/SideMenu" element={<SideMenu />} />
+        <Route exact path="/EnquiryForm" element={<EnquiryForm />} />
         {/* <Route exact path="/Pay" element={<Pay />} /> */}
       </Routes>
+
+      <FloatingActionBtn/>   
+
+      {/* the component present below should be shown conditionally */}
+
+
+          
+      <Footer/>
     </div>
 
   );

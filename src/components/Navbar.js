@@ -4,6 +4,7 @@ import FuncHandler from '../hooks/FuncHandler';
 import { NavLink } from 'react-router-dom';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Button } from '@mui/material';
 
 function Navbar(props) {
 
@@ -23,8 +24,9 @@ function Navbar(props) {
     <div>
         <div className='Navbar fixed top-0 w-full bg-gray-800 text-white p-4 justify-between'>
            
-            <NavLink to="/" activeClassName="active">Himanshu Store</NavLink>
+            <NavLink to="/" activeClassName="active">Bijender properties</NavLink>
 
+           <Button className='contactbutton'>Contact Us</Button>
            <ShoppingCartIcon className='float-right text-red-500 cursor-pointer' onClick={basketbtn}/>
         </div>
 
