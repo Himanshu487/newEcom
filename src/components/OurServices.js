@@ -5,7 +5,7 @@ function OurServices() {
     <div className='Ourservices'>
     
     <div className='ServicesText'>
-        <h1>Our Services</h1>
+        <h1 className='serviceTitle'>Our Services</h1>
         <h1 className='HeadingTitle'>We're Here To Help You To Find Your Dream House</h1>
         <ul>
             <li>Property Management</li>

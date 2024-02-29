@@ -8,9 +8,11 @@ import Navbar from './components/Navbar';
 import OurServices from './components/OurServices';
 import Footer from './components/Footer';
 import FloatingActionBtn from './components/FloatingActionBtn';
-import CustomerR from './components/CustomerR';
+// import CustomerR from './components/CustomerR';
 import EnquiryForm from './components/EnquiryForm';
 import { useState } from 'react';
+import AboutUs from './components/AboutUs';
+import Wewillcontact from './components/Wewillcontact';
 
 // import { Fab,AddIcon,EditIcon,NavigationIcon,FavoriteIcon } from '@mui/material';
 // import Pay from './Pay';
@@ -36,6 +38,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/EnquiryForm" element={<EnquiryForm />} />
+        <Route exact path="/AboutUs" element={<AboutUs />} />
+        <Route exact path="/Wewillcontact" element={<Wewillcontact />} />
         {/* <Route exact path="/Pay" element={<Pay />} /> */}
       </Routes>
 

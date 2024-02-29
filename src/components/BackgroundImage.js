@@ -14,7 +14,7 @@ function BackgroundImage() {
             
             <div className='bannerButtons'>
                 <button className='bannerButton'>
-                  <Link to="/EnquiryForm">Enquire Now</Link>
+                  <Link to="/EnquiryForm" className='EnquireBtn'>Enquire Now</Link>
                   </button>
             </div>
         </div>

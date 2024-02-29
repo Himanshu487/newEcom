@@ -1,5 +1,8 @@
 
-
+body{
+  margin: 0;
+  padding: 0;
+}
 .dropbtn {
     background-color: grey;
     color: white;
@@ -8,7 +11,12 @@
     border: none;
     cursor: pointer;
   }
-  
+
+
+  .titleMain {
+    font-family: cursive;
+    font-size: 24px;
+}
 
   .dropdown-content {
     display: none;
@@ -57,7 +65,8 @@
 
 
   .Navbar{
-    background-color: #febb00;
+    /* background-color: #febb00; */
+    background-color: #1f2d5e;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -87,9 +96,9 @@
     margin-right: 1rem;
     
     padding-right: 1rem;
-    padding-top: 0.5rem;
+    padding-top: 0.4rem;
     background-color: rgba(51, 51, 51, 0.5);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
     }
     
     .bannerButton:hover{
@@ -114,6 +123,7 @@
       align-items: center;
       font-size: 24px;
       opacity: 0.5;
+      font-family: sans-serif;
     }
 
     .HeadingTitle{
@@ -135,8 +145,11 @@
       background: url('../public/Images/key.jpg') 0 0 no-repeat;
       height: 70vh;
       background-size: cover;  
-      width: 40%;
+      width: 75%;
       border-radius: 10%;
+
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; 
     }
 
     .Ourservices{
@@ -152,7 +165,9 @@
       #111);
       }
 
-
+.containerMain{
+  position: relative;
+}
 
       .footer {
         background-color: #333;
@@ -160,6 +175,12 @@
         padding: 20px;
         display: flex;
         justify-content: space-around;
+        /* position: absolute;
+        bottom: 0;
+        width: 100%; */
+        position: relative;
+        top: 85px;
+        z-index: -1;
       }
       
       .footer__address,
@@ -209,6 +230,10 @@
 
       @media (max-width: 639px) {
 
+        .Wewillcontact {
+          font-size: 18px;
+      }
+
         .img-fluid{
             display: none;
         }
@@ -234,6 +259,49 @@
         margin-left: 75px;
     }
 
+    .ServicesText{
+      padding: 0;
+    }
+
+    .containerMain .Ourservices {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 80px 20px 20px 20px;
+      /* padding: 120px; */
+  }
+
+  .containerMain .Ourservices {
+      padding-top: 80px;
+}
+
+
+      .titleMain{
+        font-size: 18px;
+      }  
+    .Ourservices{
+      align-items: center;
+      height: 50vh;
+      width: 100%;
+    }
+    .HeadingTitle {
+      font-size: 18px;
+      font-weight: bold;
+  }
+
+      }
+
+
+      @media (max-width: 382px) {
+        .animationTextAlignment{
+          padding-top:90px;
+        }
+        .titleMain {
+          font-size: 16px;
+      }
+      .contactbutton{
+        font-size: 12px;
+      }
       }
 
 
@@ -302,3 +370,147 @@
         justify-content: center;
         margin-left: 33px;
       }
+
+      /* carsuoel */
+
+      /* .carousel {
+        position: relative;
+        width: 100%;
+        max-width: 800px; 
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    
+    .image {
+        width: 100%;
+        height: auto;
+    }
+    
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .arrow.prev {
+        left: 0;
+    }
+    
+    .arrow.next {
+        right: 0;
+    }
+     */
+
+     .ServicesText ul li{
+      padding: 10px 0 10px 0;
+      font-family: sans-serif;
+     }
+     .HeadingTitle{
+      padding: 15px 0 15px 0;
+     }
+     .serviceTitle{
+      font-size: 22px;
+      font-family: sans-serif;
+     }
+     .HeadingTitle{
+      font-family: sans-serif;
+     }
+
+     .contactbutton,
+     .LinkContact,
+     .bannerButton a{
+      font-family: sans-serif;
+     }
+
+     .NavbarContent .contactbutton,
+     .LinkContact{
+      color: #fff;
+     }
+
+     .footer,.footer__address p,
+     .footer,.footer__address h3{
+      font-family: sans-serif;
+     }
+     .footer__location h3,
+     .footer__location p{
+      font-family: sans-serif;
+     }
+
+     .FormContent p,
+     .FormContent .alignLabel1,
+     .FormContent .alignLabel2,
+     .FormContent .alignLabel3
+     {
+      font-family: sans-serif;
+     }
+
+     /* .EnquireBtn{
+
+     } */
+
+
+
+
+     .EnquireBtn {
+      background-color: transparent; /* Green background color */
+      border: none; /* Remove border */
+      color: white; /* White text color */
+      /* padding: 15px 32px; Padding */
+      text-align: center; /* Center text */
+      text-decoration: none; /* Remove underline */
+      display: inline-block; /* Display as inline block */
+      font-size: 16px; /* Font size */
+      /* margin: 4px 2px; Margin */
+      cursor: pointer; /* Cursor pointer */
+      border-radius: 8px; /* Rounded corners */
+      position: relative; /* Position relative for pseudo element */
+      overflow: hidden; /* Hide overflowing content */
+      animation: shining 1s linear infinite; /* Apply animation */
+  }
+  
+  .EnquireBtn::before {
+      content: ''; /* Create pseudo element */
+      background: rgba(255, 255, 255, 0.2); /* White with opacity */
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      position: absolute; /* Position absolute */
+      top: 0; /* Top position */
+      left: -100%; /* Start from left */
+      animation: shining-overlay 2s linear infinite; /* Apply animation */
+  }
+  
+  @keyframes shining {
+      0% {
+          background-position: 200% center;
+      }
+      100% {
+          background-position: -200% center;
+      }
+  }
+  
+  @keyframes shining-overlay {
+      0% {
+          left: -100%; /* Start from left */
+      }
+      100% {
+          left: 100%; /* Move to right */
+      }
+  }
+  
+  .about-us-container{
+    padding-top: 120px;
+  }
+
+  .Wewillcontact {
+    padding: 222px 0 222px 0;
+    display: flex;
+    justify-content: center;
+    color: #5ddf4a;
+    font-size: 24px;
+}

@@ -14,18 +14,46 @@ import {
 from 'mdb-react-ui-kit';
 import { useState } from 'react';
 
+import {getDatabase, ref, set, collection, getDocs } from "firebase/database";
+import { app } from "./Firebase";
+import { Link } from 'react-router-dom';
+
+
+const db = getDatabase(app);
+
 function EnquiryForm() {
 
 
   const [isOpen, setIsOpen] = useState(false);
   const [category, setCategory] = useState("Plot's");
 
-  // let filteredData;
+
+  const [name,setName] =useState();
+  const [number,setnumber] =useState();
+  const [location,setlocation] =useState();
+
+  // const [property,setProperty] = useState();
+
+  const [success,setSuccess] = useState(false);
+
+  const putData=()=>{
+    //  set(ref(db,'users/himanshu'),{ // himanshu )---> ye breacket nhi thi ish wajah se issue aa rha tha
+     set(ref(db,`users/${name}`),{ // himanshu )---> ye breacket nhi thi ish wajah se issue aa rha tha
+      name:name,
+      number:number,
+      location:location,
+      category:category
+     });
+
+     setSuccess(true);
+  };
+
+
+
 
   const toggleDropdown = (e) => {
     setIsOpen(!isOpen);
   };
-
 
   const handleDropDown = (selectedCategory) => {
     console.log("selectedCategory",selectedCategory);
@@ -35,6 +63,8 @@ function EnquiryForm() {
 
   return (
     <div>
+ 
+{/* { success ? } */}
 
     <MDBContainer fluid>
 
@@ -47,15 +77,15 @@ function EnquiryForm() {
               <p classNAme="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Enter your details</p>
 
               <div className="d-flex flex-row align-items-center mb-4 alignLabel alignLabel1">
-                <span>Enter your name: </span><MDBInput id='form1' type='text' className='w-100'/>
+                <span>Enter your name: </span><MDBInput id='form1' type='text' className='w-100' onChange={(e)=>{setName(e.target.value)}}/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4 alignLabel alignLabel2">
-                <span>Mobile number: </span><MDBInput  id='form2' type='email'/>
+                <span>Mobile number: </span><MDBInput  id='form2' type='email' onChange={(e)=>{setnumber(e.target.value)}} />
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4 alignLabel alignLabel3">
-                <span>Current location: </span><MDBInput  id='form3' type='email'/>
+                <span>Current location: </span><MDBInput  id='form3' type='email' onChange={(e)=>{setlocation(e.target.value)}} />
               </div>
 
 
@@ -79,7 +109,8 @@ function EnquiryForm() {
                 </div>
             </div>
 
-            <button className='ContactUs'>Register</button>
+            {/* <button className='ContactUs' onClick={putData}>Register</button> */}
+            <button className='ContactUs' onClick={putData}><Link to="/Wewillcontact">Register</Link></button>
 
             </div>
 
